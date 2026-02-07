@@ -1,6 +1,5 @@
 import os
 import requests
-import datetime
 
 ##news api
 API_KEY = os.getenv("NEWS_API_KEY", "c1a233d12a44416c84076894d3ed02e1")

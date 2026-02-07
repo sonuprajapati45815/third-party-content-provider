@@ -2,12 +2,14 @@ from flask import Flask, jsonify
 from weather import weather_bp
 from flasgger import Swagger
 from news import news_bp
+from ip_location import ip_location_bp
 
 app = Flask(__name__)
 swagger = Swagger(app)
 
 app.register_blueprint(weather_bp)
 app.register_blueprint(news_bp)
+app.register_blueprint(ip_location_bp)
 
 @app.route('/third-party-service', methods=['GET'])
 def third_party_service_root():
