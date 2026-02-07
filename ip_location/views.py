@@ -3,7 +3,7 @@ import requests
 from flask import Blueprint, jsonify, request
 
 
-ip_location_bp = Blueprint('news', __name__, url_prefix='/third-party-service/location')
+ip_location_bp = Blueprint('location', __name__, url_prefix='/third-party-service/location')
 
 @ip_location_bp.route('/byIp', methods=['GET'])
 def get_news_by_query_view():
