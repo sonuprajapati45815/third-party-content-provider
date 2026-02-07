@@ -28,4 +28,4 @@ def third_party_service_root():
     return jsonify({'message': 'Welcome to the Third Party Service API'})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+    app.run(debug=True, port=7000)
