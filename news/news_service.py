@@ -4,7 +4,7 @@ import datetime
 
 ##news api
 API_KEY = os.getenv("NEWS_API_KEY", "c1a233d12a44416c84076894d3ed02e1")
-NEWS_QUERY_ENDPOINT_1 = f'''https://newsapi.org/v2/everything?q=QUERY&from={datetime.datetime.now().strftime('%Y-%m-%d')}&sortBy=popularity&apiKey={API_KEY}'''
+NEWS_QUERY_ENDPOINT_1 = f'''https://newsapi.org/v2/everything?q=QUERY&sortBy=popularity&apiKey={API_KEY}'''
 NEWS_COUNTRY_ENDPOINT_1 = f'''https://newsapi.org/v2/top-headlines?country=COUNTRY&category=CATEGORY&apiKey={API_KEY}'''
 
 def get_news_by_query(query):
