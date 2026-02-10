@@ -2,3 +2,6 @@ flask
 redis
 requests
 flasgger
+python-dotenv
+openai
+google-generativeai

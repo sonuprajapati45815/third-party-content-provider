@@ -1,4 +1,8 @@
 from flask import Flask, jsonify
+
+from ai_models import astrology_bp
+from ai_models.extensions import init_extensions
+from db.redis import init_redis
 from weather import weather_bp
 from flasgger import Swagger
 from news import news_bp
@@ -6,10 +10,14 @@ from ip_location import ip_location_bp
 
 app = Flask(__name__)
 swagger = Swagger(app)
+init_redis()
+init_extensions(app)
 
 app.register_blueprint(weather_bp)
 app.register_blueprint(news_bp)
 app.register_blueprint(ip_location_bp)
+app.register_blueprint(astrology_bp)
+
 
 @app.route('/third-party-service', methods=['GET'])
 def third_party_service_root():
@@ -29,3 +37,7 @@ def third_party_service_root():
 
 if __name__ == '__main__':
     app.run(debug=True, port=7000)
+
+
+def extensions():
+    return None
