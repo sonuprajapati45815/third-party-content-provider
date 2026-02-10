@@ -1,7 +1,7 @@
 import json
-from ai_models.extensions import openai_client, gemini_model
-from ai_models.schema.astrology_json_schema import astrology_json_schema
-from ai_models.prompts.astrologer_prompt import build_astrology_prompt
+from llm_models.initialize_llm import openai_client, gemini_model
+from astrologer.schema.astrology_json_schema import astrology_json_schema
+from astrologer.prompts.astrologer_prompt import build_astrology_prompt
 
 def call_chatgpt_astrology(user: dict, language: str) -> dict:
     if openai_client is None:
