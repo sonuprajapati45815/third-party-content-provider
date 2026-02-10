@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 
-from ai_models import astrology_bp
-from ai_models.extensions import init_extensions
+from llm_models.initialize_llm import init_llm_extensions
+from astrologer.astrology_route import astrology_bp
 from db.redis import init_redis
 from weather import weather_bp
 from flasgger import Swagger
@@ -11,7 +11,7 @@ from ip_location import ip_location_bp
 app = Flask(__name__)
 swagger = Swagger(app)
 init_redis()
-init_extensions(app)
+init_llm_extensions(app)
 
 app.register_blueprint(weather_bp)
 app.register_blueprint(news_bp)

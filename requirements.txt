@@ -4,4 +4,4 @@ requests
 flasgger
 python-dotenv
 openai
-google-generativeai
+google.genai

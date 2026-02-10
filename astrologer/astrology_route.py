@@ -1,10 +1,9 @@
 from flask import Blueprint, request, jsonify, current_app
-from ai_models.utils.validate_payload import validate_payload
-from ai_models.services.astrology_service import get_astrology_prediction
+from astrologer.utils.validate_payload import validate_payload
+from astrologer.services.astrology_service import get_astrology_prediction
 import os
 
 astrology_bp = Blueprint("astrology", __name__, url_prefix='/third-party-service/astrology')
-
 
 @astrology_bp.post("/predict")
 def predict():

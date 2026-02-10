@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from ai_models.clients.llm_clients import call_chatgpt_astrology, call_gemini_astrology
+from astrologer.clients.llm_clients import call_chatgpt_astrology, call_gemini_astrology
 
 def merge_results(chatgpt_json: dict, gemini_json: dict) -> dict:
     out = dict(chatgpt_json)
